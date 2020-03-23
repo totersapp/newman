@@ -14,6 +14,7 @@ RUN if [ ! $(echo $NEWMAN_VERSION | grep -oE "^[0-9]+\.[0-9]+\.[0-9]+$") ]; then
     # Install Newman globally
     npm install --global newman@${NEWMAN_VERSION};
 
+RUN apk add --no-cache curl
 # Set workdir to /etc/newman
 # When running the image, mount the directory containing your collection to this location
 #
